@@ -13,15 +13,19 @@ song_text = song_title.text.to_s
 song_text = song_text.delete("\t").delete("\r")
 array = song_text.split("\n")
 array.delete_at(0)
-
-
 song_history = array.each_slice(4).to_a
 
-
 # artists
-song_history.each { |item| puts item[0] }
+artists = []
+song_history.each do |item|
+  artists.append(item[0])
+end
 
-puts "\n\n\n"
+# tracks
+tracks = []
+song_history.each do |item|
+  tracks.append(item[1])
+end
 
-# song titles
-song_history.each { |item| puts item[1] }
+# Testing that the arrays hold the correct information
+puts artists[0] + " - " + tracks[0]
