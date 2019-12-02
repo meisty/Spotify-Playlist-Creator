@@ -27,5 +27,7 @@ song_history.each do |item|
   tracks.append(item[1])
 end
 
-# Testing that the arrays hold the correct information
-puts artists[0] + " - " + tracks[0]
+#Testing that the artists and track names can be combined and printed out
+artists.zip(tracks).each do |artist, track|
+  puts artist + " - " + track
+end
